@@ -1,0 +1,46 @@
+apply plugin: 'com.android.library'
+
+android {
+
+    compileSdkVersion rootProject.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.minSdkVersion
+        targetSdkVersion rootProject.targetSdkVersion
+        vectorDrawables.useSupportLibrary =true
+        versionCode 1
+        versionName "1.0"
+
+        externalNativeBuild{
+            cmake{
+                cppFlags ""
+            }
+            ndk{
+                abiFilters "armeabi-v7a","x86"
+            }
+        }
+
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    externalNativeBuild{
+      cmake{
+          path 'CMakeLists.txt'
+      }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation "androidx.appcompat:appcompat:$supportLibraryVersion"
+
+}

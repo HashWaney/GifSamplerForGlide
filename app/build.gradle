@@ -1,0 +1,29 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion rootProject.compileSdkVersion
+
+    defaultConfig{
+        minSdkVersion rootProject.minSdkVersion
+        targetSdkVersion rootProject.targetSdkVersion
+    }
+
+}
+
+dependencies {
+
+    implementation project(':lib-image-gif')
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
+    implementation "androidx.appcompat:appcompat:$supportLibraryVersion"
+
+    def constraintLayoutVersion = '2.0.0-alpha2'
+    implementation "com.android.support.constraint:constraint-layout:$constraintLayoutVersion"
+    def glideVersion = '4.9.0'
+    implementation "com.github.bumptech.glide:glide:$glideVersion"
+    annotationProcessor "com.github.bumptech.glide:compiler:$glideVersion"
+    annotationProcessor "androidx.annotation:annotation:1.1.0"
+
+}

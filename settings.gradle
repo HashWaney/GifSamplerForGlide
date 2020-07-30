@@ -1,0 +1,3 @@
+rootProject.name='giflib'
+include ':app'
+include ':lib-image-gif'
