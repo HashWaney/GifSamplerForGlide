@@ -2,6 +2,10 @@
 
 https://juejin.im/post/5f1d4470e51d45348e27c24b
 
+
+# 效果
+![](https://i.loli.net/2020/08/01/uki5CJYLBmOq14R.gif)
+
 # Feature
 
 支持圆形GIF加载 配置可查看GifResourceDecoder.java
